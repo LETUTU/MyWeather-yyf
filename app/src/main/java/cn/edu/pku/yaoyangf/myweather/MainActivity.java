@@ -33,6 +33,8 @@ import cn.edu.pku.yaoyangf.util.NetUtil;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
+    private String updateCityCode;
+    TodayWeather todayWeather = null;
     private ImageView mUpdateBtn;
     private ImageView mCitySelect;
     private TextView cityTv, timeTv, humidityTv, weekTv, pmDataTv,
@@ -74,8 +76,46 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mCitySelect.setOnClickListener(this);
 
         initView();
+
+//        updateCityCode = getIntent().getStringExtra("citycode");
+//        if(updateCityCode != "-1")
+//        {
+//            getWeatherDatafromNet(updateCityCode);//updateCityCode
+//        }
     }
 
+    /*private void getWeatherDatafromNet(String cityCode)
+    {
+        final String address = "http://wthrcdn.etouch.cn/WeatherApi?citykey="+cityCode;
+        Log.d("Address:",address);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                HttpURLConnection urlConnection = null;
+                try {
+                    URL url = new URL(address);
+                    urlConnection = (HttpURLConnection) url.openConnection();
+                    urlConnection.setRequestMethod("GET");
+                    urlConnection.setConnectTimeout(8000);
+                    urlConnection.setReadTimeout(8000);
+                    InputStream in = urlConnection.getInputStream();
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+                    StringBuffer sb = new StringBuffer();
+                    String str;
+                    while((str=reader.readLine())!=null)
+                    {
+                        sb.append(str);
+                        Log.d("date from url",str);
+                    }
+                    String response = sb.toString();
+                    Log.d("response",response);
+                }catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }*/
     void initView(){
         city_name_Tv = (TextView) findViewById(R.id.title_city_name);
         cityTv = (TextView) findViewById(R.id.city);
