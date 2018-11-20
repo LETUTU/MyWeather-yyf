@@ -58,6 +58,15 @@
             android:layout_gravity="center"
             android:src="@drawable/title_update"
             android:visibility="visible" />
+
+        <ProgressBar
+            android:id="@+id/title_update_progress"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:layout_alignParentRight="true"
+            android:indeterminateDrawable="@drawable/title_update_anim"/>
     </RelativeLayout>
     <LinearLayout
         android:layout_width="fill_parent"
@@ -117,6 +126,7 @@
                 android:layout_alignParentTop="true"
                 android:orientation="vertical" >
                 <!-- PM2.5详情 -->
+                <!-- 污染等级(重度污染) -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -124,7 +134,7 @@
                     android:paddingBottom="6.0dip"
                     android:paddingLeft="12.0dip"
                     android:paddingRight="12.0dip"
-                    android:paddingTop="6.0dip" >
+                    android:paddingTop="6.0dip">
                     <!-- PM2.5文字详情 -->
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -147,8 +157,7 @@
                             android:singleLine="true"
                             android:text="220"
                             android:textColor="@android:color/white"
-                            android:textSize="30.0sp"
-                            />
+                            android:textSize="30.0sp" />
                     </LinearLayout>
                     <!-- PM2.5图片 -->
                     <ImageView
@@ -158,7 +167,7 @@
                         android:layout_marginLeft="5.0dip"
                         android:src="@drawable/biz_plugin_weather_0_50" />
                 </LinearLayout>
-                <!-- 污染等级(重度污染) -->
+
                 <TextView
                     android:id="@+id/pm2_5_quality"
                     android:layout_width="fill_parent"
@@ -234,7 +243,153 @@
                     android:textSize="20.0sp" />
             </RelativeLayout>
         </RelativeLayout>
-    <!-- 七日天气信息 -->
-    <!-- 广告等信息 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/relative1"
+                android:layout_width="130dp"
+                android:layout_height="120dp">
+                <TextView
+                    android:id="@+id/future3_no1_week"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dip"
+                    android:singleLine="true"
+                    android:text="今天 星期三"
+                    android:textColor="@android:color/white"
+                    android:textSize="20.0sp" />
+                <TextView
+                    android:id="@+id/future3_no1_temperature"
+                    android:layout_below="@+id/future3_no1_week"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dip"
+                    android:singleLine="true"
+                    android:text="-2℃~7℃"
+                    android:textColor="@android:color/white"
+                    android:textSize="20.0sp" />
+                <TextView
+                    android:id="@+id/future3_no1_weatherState"
+                    android:layout_below="@+id/future3_no1_temperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dip"
+                    android:singleLine="true"
+                    android:text="多云转晴"
+                    android:textColor="@android:color/white"
+                    android:textSize="20.0sp" />
+                <TextView
+                    android:id="@+id/future3_no1_wind"
+                    android:layout_below="@+id/future3_no1_weatherState"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dip"
+                    android:singleLine="true"
+                    android:text="微风"
+                    android:textColor="@android:color/white"
+                    android:textSize="20.0sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/relative2"
+                android:layout_toRightOf="@+id/relative1"
+                android:layout_width="130dp"
+                android:layout_height="120dp">
+                <TextView
+                    android:id="@+id/future3_no2_week"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dip"
+                    android:singleLine="true"
+                    android:text="今天 星期三"
+                    android:textColor="@android:color/white"
+                    android:textSize="20.0sp" />
+                <TextView
+                    android:id="@+id/future3_no2_temperature"
+                    android:layout_below="@+id/future3_no2_week"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dip"
+                    android:singleLine="true"
+                    android:text="-2℃~7℃"
+                    android:textColor="@android:color/white"
+                    android:textSize="20.0sp" />
+                <TextView
+                    android:id="@+id/future3_no2_weatherState"
+                    android:layout_below="@+id/future3_no2_temperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dip"
+                    android:singleLine="true"
+                    android:text="多云转晴"
+                    android:textColor="@android:color/white"
+                    android:textSize="20.0sp" />
+                <TextView
+                    android:id="@+id/future3_no2_wind"
+                    android:layout_below="@+id/future3_no2_weatherState"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dip"
+                    android:singleLine="true"
+                    android:text="微风"
+                    android:textColor="@android:color/white"
+                    android:textSize="20.0sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_toRightOf="@+id/relative2"
+                android:id="@+id/relative3"
+                android:layout_width="130dp"
+                android:layout_height="120dp">
+                <TextView
+                    android:id="@+id/future3_no3_week"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dip"
+                    android:singleLine="true"
+                    android:text="今天 星期三"
+                    android:textColor="@android:color/white"
+                    android:textSize="20.0sp"
+                    />
+                <TextView
+                    android:id="@+id/future3_no3_temperature"
+                    android:layout_below="@+id/future3_no3_week"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dip"
+                    android:singleLine="true"
+                    android:text="-2℃~7℃"
+                    android:textColor="@android:color/white"
+                    android:textSize="20.0sp"/>
+                <TextView
+                    android:id="@+id/future3_no3_weatherState"
+                    android:layout_below="@+id/future3_no3_temperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dip"
+                    android:singleLine="true"
+                    android:text="多云转晴"
+                    android:textColor="@android:color/white"
+                    android:textSize="20.0sp"/>
+                <TextView
+                    android:id="@+id/future3_no3_wind"
+                    android:layout_below="@+id/future3_no3_weatherState"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dip"
+                    android:singleLine="true"
+                    android:text="微风"
+                    android:textColor="@android:color/white"
+                    android:textSize="20.0sp"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/locate"
+                android:layout_below="@+id/relative2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dip"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textSize="20.0sp"/>
+        </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>

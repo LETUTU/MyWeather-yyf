@@ -2,50 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <!--<RelativeLayout-->
-        <!--android:id="@+id/relative"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="45.0dip"-->
-        <!--android:background="#ffcd2626" >-->
-        <!--<TextView-->
-            <!--android:id="@+id/title_name"-->
-            <!--android:layout_width="fill_parent"-->
-            <!--android:layout_height="fill_parent"-->
-            <!--android:gravity="center"-->
-            <!--android:text="当前城市：北京"-->
-            <!--android:textColor="#ffffffff"-->
-            <!--android:textSize="20.0dip" />-->
-        <!--&lt;!&ndash;<EditText&ndash;&gt;-->
-            <!--&lt;!&ndash;android:id="@+id/search_edit"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_width="fill_parent"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:hint="搜索全国城市（中⽂文）"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_margin="10.0dip"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:drawableLeft="@drawable/magnifying_glass"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:drawablePadding="8.0dip"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:paddingBottom="8.0dip"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:paddingLeft="10.0dip"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:paddingRight="30.0dip"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:paddingTop="8.0dip"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:singleLine="true"&ndash;&gt;-->
-            <!--&lt;!&ndash;/>&ndash;&gt;-->
-        <!--<ImageView-->
-            <!--android:id="@+id/title_back"-->
-            <!--android:layout_width="45.0dip"-->
-            <!--android:layout_height="45.0dip"-->
-            <!--android:layout_alignParentLeft="true"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:src="@drawable/base_action_bar_back_normal"-->
-            <!--/>-->
-        <!--<ImageView-->
-            <!--android:layout_width="1.0dip"-->
-            <!--android:layout_height="40dip"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:layout_toRightOf="@id/title_back"-->
-            <!--android:background="#A71717"-->
-            <!--android:gravity="center" />-->
-    <!--</RelativeLayout>-->
     <RelativeLayout
         android:id="@+id/selectcity_search_rela"
         android:layout_width="fill_parent"
@@ -65,6 +21,12 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true">
             </EditText>
+            <!--<ListView android:id="@+id/list_view"-->
+                <!--android:choiceMode="singleChoice"-->
+                <!--android:dividerHeight="2px"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="wrap_content">-->
+            <!--</ListView>-->
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/selectcity_search_buttonrela"

@@ -13,9 +13,12 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -33,11 +36,14 @@ public class SelectCity extends Activity implements View.OnClickListener{
     private ListView cityListLv;
     private EditText searchEt;
     private ImageView searchBtn;
-
+    private SearchView searchView;
     private List<City> mCityList;
     private MyApplication mApplication;
     private ArrayList<String> mArrayList;
     private int updateCityCode = -1;
+    private ArrayList<String> mSearchResult = new ArrayList<>(); //搜索结果，只放城市名
+    private Map<String,String> nameToCode = new HashMap<>(); //城市名到编码
+    private Map<String,String> nameToPinyin = new HashMap<>(); //城市名到拼音
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -129,30 +135,4 @@ public class SelectCity extends Activity implements View.OnClickListener{
                 break;
         }
     }
-//    private void initViews(){
-//        mBackBtn = (ImageView)findViewById(R.id.title_back_right);
-//        mBackBtn.setOnClickListener(this);
-//
-////        mClearEditText = (ClearEditText) findViewById(R.id.search_city);
-////        mListView = (ListView) findViewById(R.id.title_list);
-//
-//        mList = (ListView)findViewById(R.id.title_list);
-//        MyApplication myApplication = (MyApplication) getApplication();
-//        cityList = myApplication.getCityList();
-//        for (City city : cityList){
-//            filterDataList.add(city);
-//        }
-//        myadapter = new Myadapter(cityList);//SelectCity.this,
-//        mList.setAdapter(myadapter);
-//        mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                City city = filterDataList.get(position);
-//                Intent i = new Intent();
-//                i.putExtra("cityCode",city.getNumber());
-//                setResult(RESULT_OK,i);
-//                finish();
-//            }
-//        });
-//    }
 }
